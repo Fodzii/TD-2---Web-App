@@ -1,4 +1,4 @@
-var cacheName = 'weatherPWA-v-1-1';
+var cacheName = 'developpeurs-v-1-0';
 var filesToCache = [];
 var filesToCache = [
 '/',
