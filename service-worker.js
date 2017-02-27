@@ -1,12 +1,10 @@
-var cacheName = 'developpeurs-v-1-0';
+var cacheName = 'developpeurs-v-1-1';
 var filesToCache = [];
 var filesToCache = [
-'/',
-'/index.html',
-'/scripts/app.js',
-'/styles/inline.css',
-'/images/clear.png',
-'/images/ic_refresh_white_24px.svg'
+'',
+'index.html',
+'scripts/app.js',
+'styles/inline.css'
 ];
 
 self.addEventListener('install', function(e) {
