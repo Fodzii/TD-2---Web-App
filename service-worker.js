@@ -1,4 +1,4 @@
-var cacheName = 'developpeurs-v-1-2';
+var cacheName = 'developpeurs-v-1-21';
 var filesToCache = [];
 var filesToCache = [
 '',
@@ -15,6 +15,24 @@ self.addEventListener('install', function(e) {
       return cache.addAll(filesToCache);
     })
   );
+});
+
+self.addEventListener('beforeinstallprompt', function(e) {
+  // beforeinstallprompt Event fired
+
+  // e.userChoice will return a Promise. 
+  // For more details read: https://developers.google.com/web/fundamentals/getting-started/primers/promises
+  e.userChoice.then(function(choiceResult) {
+
+    console.log(choiceResult.outcome);
+
+    if(choiceResult.outcome == 'dismissed') {
+      console.log('User cancelled home screen install');
+    }
+    else {
+      console.log('User added to home screen');
+    }
+  });
 });
 
 self.addEventListener('activate', function(e) {
