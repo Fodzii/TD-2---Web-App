@@ -122,21 +122,6 @@
     card.querySelector('.current .prenom').textContent = prenom;
     card.querySelector('.current .titre').textContent = titre;
         card.querySelector('.current .texte').textContent = texte;
-    var nextDays = card.querySelectorAll('.future .oneday');
-    var today = new Date();
-    today = today.getDay();
-    for (var i = 0; i < 7; i++) {
-      var nextDay = nextDays[i];
-      if (nextDay) {
-        nextDay.querySelector('.date').textContent =
-          app.daysOfWeek[(i + today) % 7];
-        nextDay.querySelector('.icon').classList.add(app.getIconClass(daily.code));
-        nextDay.querySelector('.temp-high .value').textContent =
-          Math.round(daily.high);
-        nextDay.querySelector('.temp-low .value').textContent =
-          Math.round(daily.low);
-      }
-    }
     if (app.isLoading) {
       app.spinner.setAttribute('hidden', true);
       app.container.removeAttribute('hidden');
@@ -257,6 +242,8 @@
       case 30: // partly cloudy (day)
       case 44: // partly cloudy
         return 'partly-cloudy-day';
+      case 50: // photo du développeur
+        return 'face';
     }
   };
 
@@ -269,9 +256,9 @@
     key: '2459115',
     channel: {
       identite: {
-        code: 24,
-        nom: "Mathy",
-        prenom: "Mimi",
+        code: 50,
+        nom: "Blancheton",
+        prenom: "Fabien",
         fonction: "Développeur Android"
       },
       section:{

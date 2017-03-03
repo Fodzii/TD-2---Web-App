@@ -62,7 +62,7 @@ body {
   width: 100%;
   height: 56px;
   color: #FFF;
-  background: #3F51B5;
+  background: #049CA2;
   position: fixed;
   font-size: 20px;
   box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 2px 9px 1px rgba(0, 0, 0, 0.12), 0 4px 2px -2px rgba(0, 0, 0, 0.2);
@@ -191,6 +191,10 @@ body {
   overflow-y: auto;
   -webkit-overflow-scrolling: touch; }
 
+  .titre {
+    font-weight: bold;
+  }
+
 .dialog-container {
   background: rgba(0, 0, 0, 0.57);
   position: fixed;
@@ -241,6 +245,11 @@ body {
 .dialog-buttons {
   padding: 8px !important;
   float: right; }
+
+.img_face{
+  width: 100%;
+  padding-right: 20px;
+}
 
 .card {
   padding: 16px;

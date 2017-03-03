@@ -1,4 +1,4 @@
-var cacheName = 'developpeurs-v-1-1';
+var cacheName = 'developpeurs-v-1-2';
 var filesToCache = [];
 var filesToCache = [
 '',
