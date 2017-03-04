@@ -12,9 +12,10 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-
 (function() {
   'use strict';
+
+    $(".button-collapse").sideNav();
 
   var app = {
     isLoading: true,
@@ -40,34 +41,6 @@
    *
    ****************************************************************************/
 
-  document.getElementById('butRefresh').addEventListener('click', function() {
-    // Refresh all of the forecasts
-    app.updateForecasts();
-  });
-
-  document.getElementById('butAdd').addEventListener('click', function() {
-    // Open/show the add new city dialog
-    app.toggleAddDialog(true);
-  });
-
-  document.getElementById('butAddCity').addEventListener('click', function() {
-    // Add the newly selected city
-    var select = document.getElementById('selectCityToAdd');
-    var selected = select.options[select.selectedIndex];
-    var key = selected.value;
-    var label = selected.textContent;
-    // TODO init the app.selectedCities array here
-    app.getForecast(key, label);
-    // TODO push the selected city to the array and save here
-    app.toggleAddDialog(false);
-  });
-
-  document.getElementById('butAddCancel').addEventListener('click', function() {
-    // Close the add new city dialog
-    app.toggleAddDialog(false);
-  });
-
-
   /*****************************************************************************
    *
    * Methods to update/refresh the UI
@@ -87,12 +60,12 @@
   // doesn't already exist, it's cloned from the template.
   app.updateForecastCard = function(data) {
     var dataLastUpdated = new Date(data.created);
-    var current = data.channel.identite;
-    var nom = data.channel.identite.nom;
-    var prenom = data.channel.identite.prenom;
-    var fonction = data.channel.identite.fonction;
-    var titre = data.channel.section.titre;
-    var texte = data.channel.section.texte;
+    var current = data.dev.identite;
+    var nom = data.dev.identite.nom;
+    var prenom = data.dev.identite.prenom;
+    var fonction = data.dev.identite.fonction;
+    var titre = data.dev.section.titre;
+    var texte = data.dev.section.texte;
     var card = app.visibleCards[data.key];
     if (!card) {
       card = app.cardTemplate.cloneNode(true);
@@ -116,12 +89,9 @@
     }
     cardLastUpdatedElem.textContent = data.created;
 
-    card.querySelector('.current .icon').classList.add(app.getIconClass(current.code));
     card.querySelector('.current .fonction').textContent = fonction;
     card.querySelector('.current .nom').textContent = nom;
     card.querySelector('.current .prenom').textContent = prenom;
-    card.querySelector('.current .titre').textContent = titre;
-        card.querySelector('.current .texte').textContent = texte;
     if (app.isLoading) {
       app.spinner.setAttribute('hidden', true);
       app.container.removeAttribute('hidden');
@@ -179,84 +149,10 @@
     });
   };
 
-  // TODO add saveSelectedCities function here
 
-  app.getIconClass = function(weatherCode) {
-    // Weather codes: https://developer.yahoo.com/weather/documentation.html#codes
-    weatherCode = parseInt(weatherCode);
-    switch (weatherCode) {
-      case 25: // cold
-      case 32: // sunny
-      case 33: // fair (night)
-      case 34: // fair (day)
-      case 36: // hot
-      case 3200: // not available
-        return 'clear-day';
-      case 0: // tornado
-      case 1: // tropical storm
-      case 2: // hurricane
-      case 6: // mixed rain and sleet
-      case 8: // freezing drizzle
-      case 9: // drizzle
-      case 10: // freezing rain
-      case 11: // showers
-      case 12: // showers
-      case 17: // hail
-      case 35: // mixed rain and hail
-      case 40: // scattered showers
-        return 'rain';
-      case 3: // severe thunderstorms
-      case 4: // thunderstorms
-      case 37: // isolated thunderstorms
-      case 38: // scattered thunderstorms
-      case 39: // scattered thunderstorms (not a typo)
-      case 45: // thundershowers
-      case 47: // isolated thundershowers
-        return 'thunderstorms';
-      case 5: // mixed rain and snow
-      case 7: // mixed snow and sleet
-      case 13: // snow flurries
-      case 14: // light snow showers
-      case 16: // snow
-      case 18: // sleet
-      case 41: // heavy snow
-      case 42: // scattered snow showers
-      case 43: // heavy snow
-      case 46: // snow showers
-        return 'snow';
-      case 15: // blowing snow
-      case 19: // dust
-      case 20: // foggy
-      case 21: // haze
-      case 22: // smoky
-        return 'fog';
-      case 24: // windy
-      case 23: // blustery
-        return 'windy';
-      case 26: // cloudy
-      case 27: // mostly cloudy (night)
-      case 28: // mostly cloudy (day)
-      case 31: // clear (night)
-        return 'cloudy';
-      case 29: // partly cloudy (night)
-      case 30: // partly cloudy (day)
-      case 44: // partly cloudy
-        return 'partly-cloudy-day';
-      case 50: // photo du développeur
-        return 'face';
-    }
-  };
-
-  /*
-   * Fake weather data that is presented when the user first uses the app,
-   * or when the user has not saved any cities. See startup code for more
-   * discussion.
-   */
   var initialProjectDescription = {
-    key: '2459115',
-    channel: {
+    dev: {
       identite: {
-        code: 50,
         nom: "Blancheton",
         prenom: "Fabien",
         fonction: "Développeur Android"

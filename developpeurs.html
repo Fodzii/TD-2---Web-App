@@ -1,0 +1,82 @@
+<!--
+ Copyright 2016 Google Inc.
+ 
+ Licensed under the Apache License, Version 2.0 (the "License");
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+ 
+      http://www.apache.org/licenses/LICENSE-2.0
+ 
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="canonical" href="https://weather-pwa-sample.firebaseapp.com/final/">
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quacheton</title>
+    <link rel="stylesheet" type="text/css" href="styles/inline.css">
+    <link rel="stylesheet" type="text/css" href="styles/materialize.min.css"  media="screen,projection"/>
+    <link rel="manifest" type="application/json" href="manifest.json">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Entreprise Quacheton">
+    <link rel="apple-touch-icon" href="images/icons/icon-152x152.png">
+    <meta name="msapplication-TileImage" content="images/icons/icon-144x144.png">
+    <meta name="msapplication-TileColor" content="#51A7F9">
+    <!-- TODO add manifest here -->
+</head>
+
+<body>
+    <nav class="teal lighten-2">
+    <div class="nav-wrapper">
+      <a href="#!" class="brand-logo">Quacheton</a>
+      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="index.html">Presentation</a></li>
+        <li><a href="developpeurs.html">Developpeurs</a></li>
+        <li><a href="#">Autre</a></li>
+      </ul>
+      <ul class="side-nav" id="mobile-demo">
+        <li><a href="index.html">Presentation</a></li>
+        <li><a href="developpeurs.html">Developpeurs</a></li>
+        <li><a href="#">Autre</a></li>
+      </ul>
+    </div>
+  </nav>
+    <main class="main">
+        <div class="card cardTemplate weather-forecast" hidden>
+            <div class="city-key" hidden></div>
+            <div class="card-last-updated" hidden></div>
+            <div class="location"></div>
+            <div class="current">
+                <div class="icon"><img class="img_face" src="images/face.png" alt=""></div>
+                <div class="description">
+                    <div class="nom"></div>
+                    <div class="prenom"></div>
+                    <div class="fonction"></div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div class="loader">
+        <svg viewBox="0 0 32 32" width="32" height="32">
+            <circle id="spinner" cx="16" cy="16" r="14" fill="none"></circle>
+        </svg>
+    </div>
+    <!-- Uncomment the line below when ready to test with fake data -->
+    <script type="text/javascript" src="scripts/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="scripts/materialize/materialize.min.js"></script>
+    <script src="scripts/app.js" async></script>
+</body>
+
+</html>
