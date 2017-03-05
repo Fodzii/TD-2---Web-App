@@ -16,6 +16,7 @@
   'use strict';
 
     $(".button-collapse").sideNav();
+    $('.carousel').carousel();
 
   var app = {
     isLoading: true,
