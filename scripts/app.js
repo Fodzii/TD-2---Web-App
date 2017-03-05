@@ -17,6 +17,7 @@
 
     $(".button-collapse").sideNav();
     $('.carousel').carousel();
+    $('input#input_text, textarea#textarea1').characterCounter();
 
   var app = {
     isLoading: true,

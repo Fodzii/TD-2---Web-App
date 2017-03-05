@@ -1,10 +1,20 @@
-var cacheName = 'developpeurs-v-1-21';
-var filesToCache = [];
+var cacheName = 'developpeurs-v-1-5';
 var filesToCache = [
 '',
 'index.html',
+'developpeurs.html',
+'contact.html',
+'developpeurs_Alaric.html',
+'developpeurs_Fabien.html',
+'images/face.png',
 'scripts/app.js',
-'styles/inline.css'
+'scripts/jquery-3.1.1.min.js',
+'scripts/materialize/materialize.js',
+'scripts/materialize/materialize.min.js',
+'styles/inline.css',
+'styles/font-awesome.min.css',
+'styles/materialize.min.css',
+'styles/materialize.css'
 ];
 
 self.addEventListener('install', function(e) {
