@@ -151,6 +151,7 @@
 
 
   var initialProjectDescription = {
+    key:"1",
     dev: {
       identite: {
         nom: "Blancheton",
@@ -161,12 +162,23 @@
         titre: "Parcours",
         texte: "Have my breakfast spaghetti yarn throwup on your pillow chase dog then run away i could pee on this if i had the energy scratch at the door then walk away lie in the sink all day. Mrow i cry and cry and cry unless you pet me, and then maybe i cry just for fun kitty scratches couch bad kitty stick butt in face. Rub face on owner stare out the window so eat prawns daintily with a claw then lick paws clean wash down prawns with a lap of carnation milk then retire to the warmest spot on the couch to claw at the fabric before taking a catnap so i am the best so the dog smells bad for soft kitty warm kitty little ball of furr lick the plastic bag. Kitten is playing with dead mouse hola te quiero poop on grasses or favor packaging over toy or spread kitty litter all over house. Cat not kitten around thinking longingly about tuna brine pushes butt to face attack dog, run away and pretend to be victim and jump off balcony, onto stranger's head so scratch the box eats owners hair then claws head. Cough furball poop in the plant pot plays league of legends put toy mouse in food bowl run out of litter box at full speed purr while eating, so cats go for world"
       }
+    },
+     key:"2",
+    dev: {
+      identite: {
+        nom: "Quachero",
+        prenom: "Alaric",
+        fonction: "Développeur Android"
+      },
+      section:{
+        titre: "Parcours",
+        texte: "Have my breakfast spaghetti yarn throwup on your pillow chase dog then run away i could pee on this if i had the energy scratch at the door then walk away lie in the sink all day. Mrow i cry and cry and cry unless you pet me, and then maybe i cry just for fun kitty scratches couch bad kitty stick butt in face. Rub face on owner stare out the window so eat prawns daintily with a claw then lick paws clean wash down prawns with a lap of carnation milk then retire to the warmest spot on the couch to claw at the fabric before taking a catnap so i am the best so the dog smells bad for soft kitty warm kitty little ball of furr lick the plastic bag. Kitten is playing with dead mouse hola te quiero poop on grasses or favor packaging over toy or spread kitty litter all over house. Cat not kitten around thinking longingly about tuna brine pushes butt to face attack dog, run away and pretend to be victim and jump off balcony, onto stranger's head so scratch the box eats owners hair then claws head. Cough furball poop in the plant pot plays league of legends put toy mouse in food bowl run out of litter box at full speed purr while eating, so cats go for world"
+      }
     }
   };
 
-
   // TODO uncomment line below to test app with fake data
-  app.updateForecastCard(initialProjectDescription);
+  //app.updateForecastCard(initialProjectDescription);
 
   // TODO add startup code here
 
